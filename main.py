@@ -193,9 +193,10 @@ def run():
         iv_bars = int(iv_frac * bar_total)
         tv_bars = bar_total - iv_bars
         bar = clr("█" * iv_bars, C.GREEN) + clr("░" * tv_bars, C.BLUE)
+        mc_price_str = f"${result['price']:.2f}"
         print(f"  [Intrinsic {clr(f'${intrinsic:.2f}',C.GREEN)}] + "
               f"[Time {clr(f'${time_val:.2f}',C.BLUE)}]  =  "
-              f"{clr(f'${result[\"price\"]:.2f}', C.WHITE, C.BOLD)}")
+              f"{clr(mc_price_str, C.WHITE, C.BOLD)}")
         print(f"  |{bar}|")
     else:
         print(clr("  Option is worthless at current parameters.", C.RED))
